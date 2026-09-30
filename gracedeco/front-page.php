@@ -13,11 +13,10 @@ get_header();
     <div class="gd-hero-corner br">YOKOHAMA / JAPAN<span>GRACE DECO — 悠・結・優</span></div>
     <div class="gd-hero-content">
       <div class="gd-hero-label">Creating value, Connecting to the future</div>
-      <h1 class="gd-hero-title" id="heroTitle" data-text="物件の価値を高め、早期売却・高値売却へ">物件の価値を高め、早期売却・高値売却へ</h1>
+      <h1 class="gd-hero-title" id="heroTitle" data-text="空き家問題専門トータルコンサルティング">空き家問題専門トータルコンサルティング</h1>
       <div class="gd-hero-sub">Home Staging Professional</div>
       <p class="gd-hero-desc">
-        インテリアの力で物件の価値を最大化し、内覧時の第一印象を向上させることで、成約率アップを実現します。<br>
-        暮らしに寄り添う空間づくりで、あなたの物件に新しい価値を。
+        快適な住まいと暮らしを実現するためのさまざまな問題を専門知識と技術で解決し質を高めること
       </p>
     </div>
     <div class="gd-scroll-ind">
@@ -33,15 +32,17 @@ get_header();
         <div class="gd-about-img reveal"></div>
         <div class="gd-about-txt">
           <h3 class="reveal">About GRACE DECO</h3>
-          <h2 class="reveal reveal-delay-1">物件の価値を高め、<br><span class="em">早期売却・高値売却</span>へ。</h2>
+          <div class="gd-about-kicker reveal">Home Staging Professional</div>
+          <h2 class="reveal reveal-delay-1">お客様に今何が必要なのか<br>何がやりたいのかを<span class="em">瞬時に見極めます。</span></h2>
           <p class="reveal reveal-delay-2">
-            GRACE DECOは、ホームステージングのプロフェッショナルとして、不動産会社様の売却活動を全面的にサポートいたします。プロのインテリアコーディネートで空室物件の第一印象を劇的に改善し、購買意欲を高める空間を演出します。
+            空き家専門のGRACE DECOでは、お客様のご意向を瞬時に反映させます。
           </p>
           <p class="reveal reveal-delay-3">
-            「悠・結・優」— 3つの「ゆう」に寄り添いながら、心地よく、魅力が伝わる空間づくりをご提案。撮影から掲載までワンストップでご提供します。
+            寄り添いながら、心地よく、魅力が伝わる空間づくりをワンストップでご提案実施致します。
           </p>
           <div class="gd-about-sig reveal reveal-delay-4">
             <div>
+              <div class="gd-about-sig-role" style="margin:0 0 8px;">Home Staging Professional</div>
               <div class="gd-about-sig-name">Mariko Hirano</div>
               <div class="gd-about-sig-role">REPRESENTATIVE — 代表 平野眞理子</div>
             </div>
@@ -59,8 +60,7 @@ get_header();
         <div class="gd-sec-en reveal">PHILOSOPHY</div>
         <h2 class="gd-sec-jp reveal reveal-delay-1">3つの<span class="accent">「ゆう」</span>に寄り添う</h2>
         <p class="gd-sec-desc reveal reveal-delay-2">
-          住まいは、ただ暮らす場所ではありません。心を休め、家族を結び、毎日の暮らしを豊かにする大切な場所です。<br>
-          GRACE DECOは、3つの「ゆう」に寄り添い、心地よく、魅力が伝わる空間づくりをご提案します。
+          ゆったりと結ぶ循環する住まいをご提供します。
         </p>
       </div>
       <div class="gd-yuu-wrap">
@@ -105,7 +105,7 @@ get_header();
           <div class="gd-feat-en">EARLY SALE</div>
           <div>
             <div class="gd-feat-title">早期売却・賃貸の実現</div>
-            <div class="gd-feat-desc">内覧時に具体的な生活イメージを提供し、購入決定を早めます。空室・居住中・空き家問わず対応。</div>
+            <div class="gd-feat-desc">空室専門のGRACE DECOでは、<br>お客様の意向にお応えいたします。</div>
           </div>
           <div class="gd-feat-arrow">→</div>
         </div>
@@ -113,8 +113,8 @@ get_header();
           <div class="gd-feat-num">02</div>
           <div class="gd-feat-en">HIGH VALUE</div>
           <div>
-            <div class="gd-feat-title">売却価格の向上</div>
-            <div class="gd-feat-desc">魅力的な空間演出により、物件の価値を最大限に引き出し、高値売却を実現します。</div>
+            <div class="gd-feat-title">物件価値の向上</div>
+            <div class="gd-feat-desc">魅力的な空間演出により、<br>物件の価値を最大限に引き出します。</div>
           </div>
           <div class="gd-feat-arrow">→</div>
         </div>
@@ -132,7 +132,7 @@ get_header();
           <div class="gd-feat-en">COST PERFORMANCE</div>
           <div>
             <div class="gd-feat-title">高いコストパフォーマンス</div>
-            <div class="gd-feat-desc">リフォーム不要で、低コストで物件の印象を劇的に改善。投資対効果の高いご提案。</div>
+            <div class="gd-feat-desc">物件の印象を劇的に向上させます。</div>
           </div>
           <div class="gd-feat-arrow">→</div>
         </div>
@@ -141,7 +141,7 @@ get_header();
           <div class="gd-feat-en">PROFESSIONAL</div>
           <div>
             <div class="gd-feat-title">プロの空間演出</div>
-            <div class="gd-feat-desc">インテリアのプロが物件の特性に合わせて最適なコーディネートをご提案します。</div>
+            <div class="gd-feat-desc">物件の特性に合わせて最適な演出をします。</div>
           </div>
           <div class="gd-feat-arrow">→</div>
         </div>
@@ -149,103 +149,18 @@ get_header();
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="gd-section gd-services">
+  <!-- PHOTO -->
+  <section class="gd-section gd-photo">
     <div class="gd-section-inner">
-      <div class="gd-sec-head">
-        <div class="gd-sec-en reveal">SERVICE</div>
-        <h2 class="gd-sec-jp reveal reveal-delay-1">暮らしに寄り添う<span class="accent">空間づくり</span></h2>
-        <p class="gd-sec-desc reveal reveal-delay-2">
-          ホームステージングを中心に、レイアウト相談・カーテン提案まで<br>住まいに関わるトータルサービスをご提供します。
-        </p>
-      </div>
-      <div class="gd-svc-grid">
-        <div class="gd-svc reveal">
-          <div class="gd-svc-img"></div>
-          <div class="gd-svc-body">
-            <div class="gd-svc-num">SERVICE 01</div>
-            <div class="gd-svc-title">ホームステージング</div>
-            <div class="gd-svc-desc">居住中・空室・空き家・モデルルームに対応。プロのコーディネートで物件の魅力を最大化します。</div>
-            <a class="gd-svc-more" href="<?php echo esc_url( gracedeco_url( 'service' ) ); ?>">VIEW MORE</a>
-          </div>
+      <?php $gd_photo = gracedeco_image( 'paris-table.jpg' ); ?>
+      <figure class="gd-photo-fig reveal">
+        <div class="gd-photo-img<?php echo $gd_photo ? ' has-img' : ''; ?>">
+          <?php if ( $gd_photo ) : ?>
+            <img src="<?php echo esc_url( $gd_photo ); ?>" alt="France Parisにて撮影 テーブルコーディネート" loading="lazy">
+          <?php endif; ?>
         </div>
-        <div class="gd-svc reveal reveal-delay-1">
-          <div class="gd-svc-img"></div>
-          <div class="gd-svc-body">
-            <div class="gd-svc-num">SERVICE 02</div>
-            <div class="gd-svc-title">レイアウト相談</div>
-            <div class="gd-svc-desc">図面をもとに家具等のレイアウト設計、家具選び同行サービスをご提供します。</div>
-            <a class="gd-svc-more" href="<?php echo esc_url( gracedeco_url( 'service' ) ); ?>">VIEW MORE</a>
-          </div>
-        </div>
-        <div class="gd-svc reveal reveal-delay-2">
-          <div class="gd-svc-img"></div>
-          <div class="gd-svc-body">
-            <div class="gd-svc-num">SERVICE 03</div>
-            <div class="gd-svc-title">カーテン・ブラインド</div>
-            <div class="gd-svc-desc">オーダーによる窓装飾、生地選びから取り付けまでトータルにご対応します。</div>
-            <a class="gd-svc-more" href="<?php echo esc_url( gracedeco_url( 'service' ) ); ?>">VIEW MORE</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FLOW -->
-  <section class="gd-section gd-flow-section">
-    <div class="gd-section-inner">
-      <div class="gd-sec-head">
-        <div class="gd-sec-en reveal">FLOW</div>
-        <h2 class="gd-sec-jp reveal reveal-delay-1">サービスの<span class="accent">流れ</span></h2>
-        <p class="gd-sec-desc reveal reveal-delay-2">
-          お問い合わせから撤去・原状回復まで、<br>ワンストップで責任を持って対応いたします。
-        </p>
-      </div>
-      <div class="gd-flow-wrap reveal">
-        <div class="gd-flow-line" id="flowLine"></div>
-        <div class="gd-flow-grid">
-          <div class="gd-flow-item">
-            <div class="gd-flow-dot">01</div>
-            <div>
-              <div class="gd-flow-step">STEP 01</div>
-              <div class="gd-flow-title">現地調査・ヒアリング</div>
-              <div class="gd-flow-desc">物件の特徴や周辺環境、ターゲット層を調査し、最適なご提案をいたします。</div>
-            </div>
-          </div>
-          <div class="gd-flow-item">
-            <div class="gd-flow-dot">02</div>
-            <div>
-              <div class="gd-flow-step">STEP 02</div>
-              <div class="gd-flow-title">プランニング・ご提案</div>
-              <div class="gd-flow-desc">物件の魅力を最大限に引き出すステージングプランとお見積りをご提案します。</div>
-            </div>
-          </div>
-          <div class="gd-flow-item">
-            <div class="gd-flow-dot">03</div>
-            <div>
-              <div class="gd-flow-step">STEP 03</div>
-              <div class="gd-flow-title">ステージング実施</div>
-              <div class="gd-flow-desc">家具・小物・グリーンを設置し、モデルルームのような魅力的な空間を演出します。</div>
-            </div>
-          </div>
-          <div class="gd-flow-item">
-            <div class="gd-flow-dot">04</div>
-            <div>
-              <div class="gd-flow-step">STEP 04</div>
-              <div class="gd-flow-title">写真撮影・内覧サポート</div>
-              <div class="gd-flow-desc">プロカメラマンによる撮影と、内覧時の印象を高めるサポートで反響アップを後押しします。</div>
-            </div>
-          </div>
-          <div class="gd-flow-item">
-            <div class="gd-flow-dot">05</div>
-            <div>
-              <div class="gd-flow-step">STEP 05</div>
-              <div class="gd-flow-title">撤去・原状回復</div>
-              <div class="gd-flow-desc">成約後は速やかに撤去し、原状回復まで責任をもって対応いたします。</div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <figcaption class="gd-photo-cap">France Parisにて撮影　テーブルコーディネート</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -262,8 +177,10 @@ get_header();
       <div class="gd-case-grid">
         <a class="gd-case-card reveal" href="<?php echo esc_url( gracedeco_url( 'case' ) ); ?>">
           <div class="gd-case-ba">
-            <div class="gd-case-half" data-label="BEFORE"></div>
-            <div class="gd-case-half" data-label="AFTER"></div>
+            <?php $gd_img = gracedeco_image( 'case-01-before.jpg' ); ?>
+            <div class="gd-case-half<?php echo $gd_img ? ' has-img' : ''; ?>" data-label="BEFORE"><?php if ( $gd_img ) : ?><img src="<?php echo esc_url( $gd_img ); ?>" alt="BEFORE"><?php endif; ?></div>
+            <?php $gd_img = gracedeco_image( 'case-01-after.jpg' ); ?>
+            <div class="gd-case-half<?php echo $gd_img ? ' has-img' : ''; ?>" data-label="AFTER"><?php if ( $gd_img ) : ?><img src="<?php echo esc_url( $gd_img ); ?>" alt="AFTER"><?php endif; ?></div>
           </div>
           <div class="gd-case-body">
             <div class="gd-case-cat">CASE 01 — RESALE</div>
@@ -282,8 +199,10 @@ get_header();
         </a>
         <a class="gd-case-card reveal reveal-delay-1" href="<?php echo esc_url( gracedeco_url( 'case' ) ); ?>">
           <div class="gd-case-ba">
-            <div class="gd-case-half" data-label="BEFORE"></div>
-            <div class="gd-case-half" data-label="AFTER"></div>
+            <?php $gd_img = gracedeco_image( 'case-02-before.jpg' ); ?>
+            <div class="gd-case-half<?php echo $gd_img ? ' has-img' : ''; ?>" data-label="BEFORE"><?php if ( $gd_img ) : ?><img src="<?php echo esc_url( $gd_img ); ?>" alt="BEFORE"><?php endif; ?></div>
+            <?php $gd_img = gracedeco_image( 'case-02-after.jpg' ); ?>
+            <div class="gd-case-half<?php echo $gd_img ? ' has-img' : ''; ?>" data-label="AFTER"><?php if ( $gd_img ) : ?><img src="<?php echo esc_url( $gd_img ); ?>" alt="AFTER"><?php endif; ?></div>
           </div>
           <div class="gd-case-body">
             <div class="gd-case-cat">CASE 02 — HOUSE</div>
@@ -302,8 +221,10 @@ get_header();
         </a>
         <a class="gd-case-card reveal reveal-delay-2" href="<?php echo esc_url( gracedeco_url( 'case' ) ); ?>">
           <div class="gd-case-ba">
-            <div class="gd-case-half" data-label="BEFORE"></div>
-            <div class="gd-case-half" data-label="AFTER"></div>
+            <?php $gd_img = gracedeco_image( 'case-03-before.jpg' ); ?>
+            <div class="gd-case-half<?php echo $gd_img ? ' has-img' : ''; ?>" data-label="BEFORE"><?php if ( $gd_img ) : ?><img src="<?php echo esc_url( $gd_img ); ?>" alt="BEFORE"><?php endif; ?></div>
+            <?php $gd_img = gracedeco_image( 'case-03-after.jpg' ); ?>
+            <div class="gd-case-half<?php echo $gd_img ? ' has-img' : ''; ?>" data-label="AFTER"><?php if ( $gd_img ) : ?><img src="<?php echo esc_url( $gd_img ); ?>" alt="AFTER"><?php endif; ?></div>
           </div>
           <div class="gd-case-body">
             <div class="gd-case-cat">CASE 03 — INVEST</div>

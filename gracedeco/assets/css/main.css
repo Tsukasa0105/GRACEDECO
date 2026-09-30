@@ -17,6 +17,7 @@
   --sans:'Noto Sans JP','Helvetica Neue',sans-serif;
   --pad-x: clamp(20px, 5vw, 48px);
   --sec-y: clamp(70px, 10vw, 130px);
+  --philo-bg:#6f665d;
 }
 
 html,body{background:var(--white);color:var(--ink);font-family:var(--jp);line-height:1.8;overflow-x:hidden;-webkit-text-size-adjust:100%;}
@@ -157,14 +158,14 @@ button{font:inherit;}
 .gd-about-sig-role{font-size:11px;letter-spacing:.25em;color:var(--gray-1);margin-top:8px;font-family:var(--sans);}
 
 /* ============ PHILOSOPHY ============ */
-.gd-philo{background:var(--ink);color:var(--white);position:relative;overflow:hidden;}
+.gd-philo{background:var(--philo-bg);color:var(--white);position:relative;overflow:hidden;}
 .gd-philo::before{content:"YU · YU · YU";position:absolute;top:-30px;left:-20px;font-family:var(--serif);font-size:clamp(80px,20vw,280px);color:rgba(184,147,90,.05);font-style:italic;font-weight:300;letter-spacing:.1em;line-height:1;pointer-events:none;white-space:nowrap;}
 .gd-philo .gd-sec-en{color:var(--gold);}
 .gd-philo .gd-sec-en::before,.gd-philo .gd-sec-en::after{background:var(--gold);}
 .gd-philo .gd-sec-jp{color:var(--white);}
-.gd-philo .gd-sec-desc{color:#b8b6b0;}
+.gd-philo .gd-sec-desc{color:#efebe4;}
 .gd-yuu-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3vw,40px);margin-top:clamp(40px,6vw,80px);}
-.gd-yuu{text-align:center;padding:clamp(36px,5vw,60px) clamp(18px,3vw,30px);border:1px solid rgba(184,147,90,.2);position:relative;transition:all .6s cubic-bezier(.2,.9,.3,1);cursor:pointer;background:rgba(255,255,255,.02);}
+.gd-yuu{text-align:center;padding:clamp(36px,5vw,60px) clamp(18px,3vw,30px);border:1px solid rgba(233,220,196,.35);position:relative;transition:all .6s cubic-bezier(.2,.9,.3,1);cursor:pointer;background:rgba(255,255,255,.04);}
 .gd-yuu::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(184,147,90,.08),transparent);opacity:0;transition:opacity .6s;}
 .gd-yuu:hover::before{opacity:1;}
 .gd-yuu:hover{transform:translateY(-12px);border-color:var(--gold);}
@@ -173,7 +174,7 @@ button{font:inherit;}
 .gd-yuu:hover .gd-yuu-kanji{color:var(--gold);}
 .gd-yuu-yomi{font-family:var(--serif);font-size:clamp(14px,1.6vw,16px);letter-spacing:.3em;color:var(--gold-soft);margin-bottom:26px;font-style:italic;}
 .gd-yuu-line{width:30px;height:1px;background:var(--gold);margin:0 auto 22px;}
-.gd-yuu-txt{font-size:clamp(12px,1.4vw,14px);line-height:2.1;color:#c8c6c0;letter-spacing:.08em;}
+.gd-yuu-txt{font-size:clamp(12px,1.4vw,14px);line-height:2.1;color:#f1ede6;letter-spacing:.08em;}
 
 /* ============ FEATURES (5 REASONS) ============ */
 .gd-features{background:var(--white);}
@@ -479,3 +480,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   .gd-sec-jp{font-size:20px;}
 }
 .gd-breadcrumb a{text-decoration:none;color:inherit;}
+
+/* ---- content update (HOME) ---- */
+.gd-about-kicker{font-family:var(--serif);font-size:clamp(12px,1.3vw,14px);letter-spacing:.4em;color:var(--gray-1);font-style:italic;margin-bottom:18px;}
+.gd-photo{background:var(--white);padding-top:0;}
+.gd-photo-fig{max-width:960px;margin:0 auto;}
+.gd-photo-img{position:relative;width:100%;aspect-ratio:16/10;background:#d8d4ca;overflow:hidden;}
+.gd-photo-img:not(.has-img)::before{content:"画像が入ります";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#8a8880;font-family:var(--sans);font-size:12px;letter-spacing:.3em;}
+.gd-photo-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.gd-photo-cap{margin-top:18px;text-align:center;font-family:var(--jp);font-size:clamp(12px,1.4vw,14px);letter-spacing:.15em;color:var(--gray-2);}
+.gd-case-half img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.gd-case-half.has-img::after{display:none;}

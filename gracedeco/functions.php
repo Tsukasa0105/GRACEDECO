@@ -80,6 +80,14 @@ function gracedeco_url( $slug ) {
 }
 
 /**
+ * URL of an image in assets/images/, or an empty string when the file has not been added yet.
+ */
+function gracedeco_image( $file ) {
+	$path = get_theme_file_path( 'assets/images/' . $file );
+	return file_exists( $path ) ? get_theme_file_uri( 'assets/images/' . $file ) : '';
+}
+
+/**
  * Whether the given nav slug is the page currently displayed.
  */
 function gracedeco_is_current( $slug ) {

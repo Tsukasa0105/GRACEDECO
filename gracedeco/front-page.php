@@ -6,8 +6,8 @@ get_header();
 ?>
 
 <main class="gd-page active" id="page-home">
-  <section class="gd-hero">
-    <div class="gd-hero-bg"></div>
+  <section class="gd-hero<?php echo gracedeco_has_media( 'videos/consulting.mp4' ); ?>">
+    <div class="gd-hero-bg"><?php gracedeco_media( 'videos/consulting.mp4', '' ); ?></div>
     <div class="gd-hero-overlay"></div>
     <div class="gd-hero-corner tl">EST. 2020<span>HOME STAGING PROFESSIONAL</span></div>
     <div class="gd-hero-corner br">YOKOHAMA / JAPAN<span>GRACE DECO — 悠・結・優</span></div>
@@ -29,7 +29,7 @@ get_header();
   <section class="gd-section gd-about-top">
     <div class="gd-section-inner">
       <div class="gd-about-grid">
-        <div class="gd-about-img reveal"></div>
+        <div class="gd-about-img reveal<?php echo gracedeco_has_media( 'images/about-portrait.jpg' ); ?>"><?php gracedeco_media( 'images/about-portrait.jpg', '代表 平野眞理子' ); ?></div>
         <div class="gd-about-txt">
           <h3 class="reveal">About GRACE DECO</h3>
           <div class="gd-about-kicker reveal">Home Staging Professional</div>
@@ -152,12 +152,10 @@ get_header();
   <!-- PHOTO -->
   <section class="gd-section gd-photo">
     <div class="gd-section-inner">
-      <?php $gd_photo = gracedeco_image( 'paris-table.jpg' ); ?>
       <figure class="gd-photo-fig reveal">
-        <div class="gd-photo-img<?php echo $gd_photo ? ' has-img' : ''; ?>">
-          <?php if ( $gd_photo ) : ?>
-            <img src="<?php echo esc_url( $gd_photo ); ?>" alt="France Parisにて撮影 テーブルコーディネート" loading="lazy">
-          <?php endif; ?>
+        <div class="gd-photo-grid">
+          <div class="gd-photo-img gd-photo-wide<?php echo gracedeco_has_media( 'images/photo-europe-1.jpg' ); ?>"><?php gracedeco_media( 'images/photo-europe-1.jpg', 'France Parisにて撮影' ); ?></div>
+          <div class="gd-photo-img gd-photo-tall<?php echo gracedeco_has_media( 'images/photo-europe-2.jpg' ); ?>"><?php gracedeco_media( 'images/photo-europe-2.jpg', 'France Parisにて撮影 テーブルコーディネート' ); ?></div>
         </div>
         <figcaption class="gd-photo-cap">France Parisにて撮影　テーブルコーディネート</figcaption>
       </figure>

@@ -15,7 +15,7 @@ get_header();
   ?>
   <section class="gd-about-page-intro">
     <div class="gd-about-page-grid">
-      <div class="gd-about-img reveal" style="aspect-ratio:3/4;"></div>
+      <div class="gd-about-img reveal<?php echo gracedeco_has_media( 'images/about-fullbody.jpg' ); ?>" style="aspect-ratio:3/4;"><?php gracedeco_media( 'images/about-fullbody.jpg', '代表 平野眞理子' ); ?></div>
       <div>
         <div class="gd-sec-en reveal" style="justify-content:flex-start;text-align:left;">GREETINGS</div>
         <h2 class="reveal reveal-delay-1" style="font-family:var(--jp);font-size:clamp(24px,3.2vw,34px);font-weight:400;letter-spacing:.1em;line-height:1.7;margin:24px 0 32px;">

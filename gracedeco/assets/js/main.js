@@ -174,6 +174,23 @@
     if (window.innerWidth > 768 && mobileMenu && mobileMenu.classList.contains('open')) { setMenu(false); }
   });
 
+  /* ===== Videos: respect reduced-motion, pause when off-screen ===== */
+  var videos = $$('video.gd-video');
+  if (videos.length) {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      videos.forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
+    } else if ('IntersectionObserver' in window) {
+      var vo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          var p = en.isIntersecting ? en.target.play() : en.target.pause();
+          if (p && p.catch) { p.catch(function () {}); }
+        });
+      });
+      videos.forEach(function (v) { vo.observe(v); });
+    }
+  }
+
   /* ===== Contact form: prevent double submit ===== */
   var form = $('.gd-contact-form');
   if (form) {

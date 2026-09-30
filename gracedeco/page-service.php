@@ -15,7 +15,7 @@ get_header();
   ?>
   <section class="gd-svc-detail">
     <div class="gd-svc-item">
-      <div class="gd-svc-item-img reveal"></div>
+      <div class="gd-svc-item-img reveal<?php echo gracedeco_has_media( 'videos/staging.mp4' ); ?>"><?php gracedeco_media( 'videos/staging.mp4', '' ); ?></div>
       <div>
         <div class="gd-svc-item-num reveal">01</div>
         <div class="gd-svc-item-en reveal reveal-delay-1">HOME STAGING</div>
@@ -32,7 +32,7 @@ get_header();
       </div>
     </div>
     <div class="gd-svc-item reverse">
-      <div class="gd-svc-item-img reveal"></div>
+      <div class="gd-svc-item-img reveal<?php echo gracedeco_has_media( 'videos/consulting.mp4' ); ?>"><?php gracedeco_media( 'videos/consulting.mp4', '' ); ?></div>
       <div>
         <div class="gd-svc-item-num reveal">02</div>
         <div class="gd-svc-item-en reveal reveal-delay-1">LAYOUT CONSULTING</div>
@@ -49,7 +49,7 @@ get_header();
       </div>
     </div>
     <div class="gd-svc-item">
-      <div class="gd-svc-item-img reveal"></div>
+      <div class="gd-svc-item-img reveal<?php echo gracedeco_has_media( 'videos/fabric-samples.mp4' ); ?>"><?php gracedeco_media( 'videos/fabric-samples.mp4', '' ); ?></div>
       <div>
         <div class="gd-svc-item-num reveal">03</div>
         <div class="gd-svc-item-en reveal reveal-delay-1">CURTAIN & BLIND</div>
@@ -66,7 +66,7 @@ get_header();
       </div>
     </div>
     <div class="gd-svc-item reverse">
-      <div class="gd-svc-item-img reveal"></div>
+      <div class="gd-svc-item-img reveal<?php echo gracedeco_has_media( 'images/interior-chair.jpg' ); ?>"><?php gracedeco_media( 'images/interior-chair.jpg', 'インテリアコーディネート' ); ?></div>
       <div>
         <div class="gd-svc-item-num reveal">04</div>
         <div class="gd-svc-item-en reveal reveal-delay-1">PHOTO & PROMOTION</div>

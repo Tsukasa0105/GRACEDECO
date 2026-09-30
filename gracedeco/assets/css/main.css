@@ -484,10 +484,28 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 /* ---- content update (HOME) ---- */
 .gd-about-kicker{font-family:var(--serif);font-size:clamp(12px,1.3vw,14px);letter-spacing:.4em;color:var(--gray-1);font-style:italic;margin-bottom:18px;}
 .gd-photo{background:var(--white);padding-top:0;}
-.gd-photo-fig{max-width:960px;margin:0 auto;}
+.gd-photo-fig{max-width:1000px;margin:0 auto;}
 .gd-photo-img{position:relative;width:100%;aspect-ratio:16/10;background:#d8d4ca;overflow:hidden;}
 .gd-photo-img:not(.has-img)::before{content:"画像が入ります";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#8a8880;font-family:var(--sans);font-size:12px;letter-spacing:.3em;}
 .gd-photo-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .gd-photo-cap{margin-top:18px;text-align:center;font-family:var(--jp);font-size:clamp(12px,1.4vw,14px);letter-spacing:.15em;color:var(--gray-2);}
 .gd-case-half img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .gd-case-half.has-img::after{display:none;}
+
+/* ---- media (images / videos supplied by client) ---- */
+.gd-video{display:block;}
+.has-media > img,.has-media > video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.gd-hero-bg.has-media,.gd-hero.has-media .gd-hero-bg{overflow:hidden;}
+.gd-hero.has-media .gd-hero-bg::before,
+.gd-about-img.has-media::before,.gd-svc-item-img.has-media::before,.gd-photo-img.has-media::before{display:none;}
+.gd-hero.has-media .gd-hero-bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.gd-hero.has-media .gd-hero-overlay{background:linear-gradient(180deg,rgba(255,255,255,.35) 0%,rgba(255,255,255,.55) 60%,rgba(255,255,255,.7) 100%);}
+.gd-about-img > img{object-position:center 20%;}
+.gd-svc-item-img > video,.gd-svc-item-img > img{object-position:center 30%;}
+.gd-photo-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(10px,2vw,20px);align-items:stretch;}
+.gd-photo-grid .gd-photo-img{aspect-ratio:auto;min-height:clamp(240px,42vw,520px);}
+@media (max-width:600px){
+  .gd-photo-grid{grid-template-columns:1fr;}
+  .gd-photo-grid .gd-photo-img{min-height:0;aspect-ratio:4/3;}
+  .gd-photo-grid .gd-photo-tall{aspect-ratio:3/4;}
+}

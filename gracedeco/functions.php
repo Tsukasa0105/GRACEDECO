@@ -88,6 +88,32 @@ function gracedeco_image( $file ) {
 }
 
 /**
+ * ' has-media' when the file (path relative to assets/) exists - used to hide the placeholder label.
+ */
+function gracedeco_has_media( $rel ) {
+	return file_exists( get_theme_file_path( 'assets/' . $rel ) ) ? ' has-media' : '';
+}
+
+/**
+ * Print an <img> (jpg/png/webp) or an autoplaying muted <video> (mp4) from assets/.
+ * Prints nothing when the file does not exist, so the CSS placeholder stays visible.
+ * Videos use assets/images/posters/{name}.jpg as poster when present.
+ */
+function gracedeco_media( $rel, $alt = '' ) {
+	if ( ! gracedeco_has_media( $rel ) ) {
+		return;
+	}
+	$url = get_theme_file_uri( 'assets/' . $rel );
+	if ( 'mp4' === strtolower( pathinfo( $rel, PATHINFO_EXTENSION ) ) ) {
+		$poster_rel = 'images/posters/' . pathinfo( $rel, PATHINFO_FILENAME ) . '.jpg';
+		$poster     = file_exists( get_theme_file_path( 'assets/' . $poster_rel ) ) ? ' poster="' . esc_url( get_theme_file_uri( 'assets/' . $poster_rel ) ) . '"' : '';
+		echo '<video class="gd-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true"' . $poster . '><source src="' . esc_url( $url ) . '" type="video/mp4"></video>'; // phpcs:ignore WordPress.Security.EscapeOutput
+		return;
+	}
+	echo '<img src="' . esc_url( $url ) . '" alt="' . esc_attr( $alt ) . '" loading="lazy">'; // phpcs:ignore WordPress.Security.EscapeOutput
+}
+
+/**
  * Whether the given nav slug is the page currently displayed.
  */
 function gracedeco_is_current( $slug ) {

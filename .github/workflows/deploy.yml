@@ -1,0 +1,37 @@
+name: Deploy theme to Xserver
+
+on:
+  push:
+    branches:
+      - main
+      - ccr-c12f79b8-f416wy
+    paths:
+      - "gracedeco/**"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-theme
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Upload theme via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: sv17243.xserver.jp
+          username: richwin@gracedeco-akiyahome.com
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./gracedeco/
+          server-dir: /gracedeco-akiyahome.com/public_html/wp-content/themes/grace-deco/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.gitkeep
+            **/.DS_Store

@@ -197,3 +197,65 @@ function gracedeco_handle_contact() {
 }
 add_action( 'admin_post_nopriv_gracedeco_contact', 'gracedeco_handle_contact' );
 add_action( 'admin_post_gracedeco_contact', 'gracedeco_handle_contact' );
+
+/**
+ * One-time setup: create the fixed pages the theme templates are bound to (by slug),
+ * assign the front page, make sure pretty permalinks are on, and flush rewrite rules.
+ * Runs on theme activation, and once more on the next admin page load for an already active theme.
+ */
+function gracedeco_setup_site() {
+	$pages = array(
+		'home'    => 'HOME',
+		'about'   => 'ABOUT',
+		'service' => 'SERVICE',
+		'flow'    => 'FLOW',
+		'case'    => 'CASE',
+		'company' => 'COMPANY',
+		'contact' => 'CONTACT',
+	);
+
+	$ids = array();
+	foreach ( $pages as $slug => $title ) {
+		$existing = get_page_by_path( $slug );
+		if ( $existing ) {
+			$ids[ $slug ] = $existing->ID;
+			continue;
+		}
+		$id = wp_insert_post(
+			array(
+				'post_type'   => 'page',
+				'post_status' => 'publish',
+				'post_title'  => $title,
+				'post_name'   => $slug,
+			)
+		);
+		if ( $id && ! is_wp_error( $id ) ) {
+			$ids[ $slug ] = $id;
+		}
+	}
+
+	// Front page: only when no static front page has been chosen yet.
+	if ( 'page' !== get_option( 'show_on_front' ) || ! get_option( 'page_on_front' ) ) {
+		if ( ! empty( $ids['home'] ) ) {
+			update_option( 'show_on_front', 'page' );
+			update_option( 'page_on_front', $ids['home'] );
+		}
+	}
+
+	// Plain permalinks make /about/ etc. return "page not found".
+	if ( '' === get_option( 'permalink_structure' ) ) {
+		global $wp_rewrite;
+		$wp_rewrite->set_permalink_structure( '/%postname%/' );
+	}
+
+	flush_rewrite_rules( true );
+	update_option( 'gracedeco_setup_version', '1' );
+}
+add_action( 'after_switch_theme', 'gracedeco_setup_site' );
+
+function gracedeco_maybe_setup_site() {
+	if ( '1' !== get_option( 'gracedeco_setup_version' ) && current_user_can( 'manage_options' ) ) {
+		gracedeco_setup_site();
+	}
+}
+add_action( 'admin_init', 'gracedeco_maybe_setup_site' );

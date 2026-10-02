@@ -1,4 +1,4 @@
-name: Deploy theme to Xserver (SFTP/SSH)
+name: Deploy theme to Xserver
 
 on:
   push:
@@ -14,40 +14,24 @@ concurrency:
   group: deploy-theme
   cancel-in-progress: false
 
-env:
-  SSH_HOST: sv17243.xserver.jp
-  SSH_PORT: "10022"
-  # Xserver home dir is /home/<server id>/ ; the document root of the site lives below it.
-  REMOTE_DIR: gracedeco-akiyahome.com/public_html/wp-content/themes/grace-deco/
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Prepare SSH key
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SSH_PASSPHRASE: ${{ secrets.SSH_PASSPHRASE }}
-        run: |
-          set -euo pipefail
-          mkdir -p ~/.ssh && chmod 700 ~/.ssh
-          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
-          # Xserver keys are issued with a passphrase: strip it for non-interactive use.
-          if [ -n "${SSH_PASSPHRASE:-}" ]; then
-            ssh-keygen -p -P "$SSH_PASSPHRASE" -N "" -f ~/.ssh/deploy_key
-          fi
-          ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts
-
-      - name: Upload theme via rsync over SSH
-        env:
-          SSH_USER: ${{ secrets.SSH_USER }}
-        run: |
-          set -euo pipefail
-          SSH_CMD="ssh -p $SSH_PORT -i $HOME/.ssh/deploy_key -o IdentitiesOnly=yes -o ConnectTimeout=30"
-          $SSH_CMD "$SSH_USER@$SSH_HOST" "mkdir -p \"\$HOME/$REMOTE_DIR\""
-          rsync -rltvz --exclude='.git*' --exclude='.DS_Store' --exclude='.gitkeep' \
-            -e "$SSH_CMD" \
-            ./gracedeco/ "$SSH_USER@$SSH_HOST:$REMOTE_DIR"
+      - name: Upload theme via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: sv17243.xserver.jp
+          username: richwin@gracedeco-akiyahome.com
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./gracedeco/
+          server-dir: /gracedeco-akiyahome.com/public_html/wp-content/themes/grace-deco/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.gitkeep
+            **/.DS_Store

@@ -10,6 +10,7 @@ get_header();
   get_template_part( 'template-parts/page-hero', null, array(
     'en'    => 'ABOUT US',
     'jp'    => '私たちについて',
+    'media' => 'videos/consulting.mp4',
     'crumb' => 'ABOUT',
   ) );
   ?>

@@ -10,6 +10,7 @@ get_header();
   get_template_part( 'template-parts/page-hero', null, array(
     'en'    => 'SERVICE',
     'jp'    => 'サービス内容',
+    'media' => 'videos/delivery.mp4',
     'crumb' => 'SERVICE',
   ) );
   ?>

@@ -10,6 +10,7 @@ get_header();
   get_template_part( 'template-parts/page-hero', null, array(
     'en'    => 'FLOW',
     'jp'    => 'サービスの流れ',
+    'media' => 'videos/consulting.mp4',
     'crumb' => 'FLOW',
   ) );
   ?>
@@ -41,7 +42,7 @@ get_header();
             <h2 class="gd-svc-item-title">現地調査・ヒアリング</h2>
             <p class="gd-svc-item-desc">物件を訪問し、特徴や周辺環境、ターゲット層を詳しくヒアリング。売却/賃貸のゴール設定を明確にし、最適な戦略をご提案いたします。</p>
           </div>
-          <div class="gd-svc-item-img<?php echo gracedeco_has_media( 'videos/consulting.mp4' ); ?>"><?php gracedeco_media( 'videos/consulting.mp4', '' ); ?></div>
+          <div class="gd-svc-item-img"></div>
         </div>
         <div class="gd-svc-item reveal" style="margin-bottom:60px;">
           <div>
@@ -50,7 +51,7 @@ get_header();
             <h2 class="gd-svc-item-title">プランニング・ご提案</h2>
             <p class="gd-svc-item-desc">物件の魅力を最大限に引き出すステージングプランを作成。イメージパースやサンプル画像を交えて、詳細なお見積りとともにご提案いたします。</p>
           </div>
-          <div class="gd-svc-item-img<?php echo gracedeco_has_media( 'videos/fabric-samples.mp4' ); ?>"><?php gracedeco_media( 'videos/fabric-samples.mp4', '' ); ?></div>
+          <div class="gd-svc-item-img"></div>
         </div>
         <div class="gd-svc-item reverse reveal" style="margin-bottom:60px;">
           <div>
@@ -59,7 +60,7 @@ get_header();
             <h2 class="gd-svc-item-title">ステージング実施</h2>
             <p class="gd-svc-item-desc">プロのスタッフが家具・小物・グリーンを搬入し設置。モデルルームのような魅力的な空間を短期間で演出します。</p>
           </div>
-          <div class="gd-svc-item-img<?php echo gracedeco_has_media( 'videos/staging.mp4' ); ?>"><?php gracedeco_media( 'videos/staging.mp4', '' ); ?></div>
+          <div class="gd-svc-item-img"></div>
         </div>
         <div class="gd-svc-item reveal" style="margin-bottom:60px;">
           <div>

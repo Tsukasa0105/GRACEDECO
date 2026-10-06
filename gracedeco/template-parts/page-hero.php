@@ -3,10 +3,9 @@
  * Sub page hero.
  * args: en, jp, crumb
  */
-$args = wp_parse_args( $args, array( 'en' => '', 'jp' => '', 'crumb' => '', 'media' => '' ) );
+$args = wp_parse_args( $args, array( 'en' => '', 'jp' => '', 'crumb' => '' ) );
 ?>
-<div class="gd-page-hero<?php echo $args['media'] ? gracedeco_has_media( $args['media'] ) : ''; ?>">
-  <?php if ( $args['media'] ) { gracedeco_media( $args['media'] ); } ?>
+<div class="gd-page-hero">
   <div class="gd-page-hero-overlay"></div>
   <div class="gd-page-hero-content">
     <div class="gd-page-hero-en"><?php echo esc_html( $args['en'] ); ?></div>

@@ -10,7 +10,6 @@ get_header();
   get_template_part( 'template-parts/page-hero', null, array(
     'en'    => 'FLOW',
     'jp'    => 'サービスの流れ',
-    'media' => 'videos/consulting.mp4',
     'crumb' => 'FLOW',
   ) );
   ?>
@@ -33,7 +32,7 @@ get_header();
             <h2 class="gd-svc-item-title">お問い合わせ</h2>
             <p class="gd-svc-item-desc">お電話・メール・お問い合わせフォームより、お気軽にご相談ください。ご相談・お見積りは無料です。物件情報や現状の課題をお聞かせください。</p>
           </div>
-          <div class="gd-svc-item-img<?php echo gracedeco_has_media( 'images/representative-face.jpg' ); ?>"><?php gracedeco_media( 'images/representative-face.jpg', 'お問い合わせ' ); ?></div>
+          <div class="gd-svc-item-img"></div>
         </div>
         <div class="gd-svc-item reverse reveal" style="margin-bottom:60px;">
           <div>
@@ -69,7 +68,7 @@ get_header();
             <h2 class="gd-svc-item-title">撮影・内覧サポート</h2>
             <p class="gd-svc-item-desc">プロカメラマンによる高品質な撮影で、WEB掲載時の反響率をアップ。内覧時のアドバイスもご提供いたします。</p>
           </div>
-          <div class="gd-svc-item-img<?php echo gracedeco_has_media( 'images/interior-living.jpg' ); ?>"><?php gracedeco_media( 'images/interior-living.jpg', 'ステージング後のリビング' ); ?></div>
+          <div class="gd-svc-item-img"></div>
         </div>
         <div class="gd-svc-item reverse reveal">
           <div>
@@ -78,7 +77,7 @@ get_header();
             <h2 class="gd-svc-item-title">撤去・原状回復</h2>
             <p class="gd-svc-item-desc">成約後は速やかに家具・小物を撤去し、原状回復まで責任をもって対応いたします。次のオーナー様にスムーズにお引き渡しできる状態に。</p>
           </div>
-          <div class="gd-svc-item-img<?php echo gracedeco_has_media( 'videos/delivery.mp4' ); ?>"><?php gracedeco_media( 'videos/delivery.mp4', '' ); ?></div>
+          <div class="gd-svc-item-img"></div>
         </div>
       </div>
     </div>

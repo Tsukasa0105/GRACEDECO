@@ -10,7 +10,6 @@ get_header();
   get_template_part( 'template-parts/page-hero', null, array(
     'en'    => 'SERVICE',
     'jp'    => 'サービス内容',
-    'media' => 'videos/delivery.mp4',
     'crumb' => 'SERVICE',
   ) );
   ?>
@@ -33,7 +32,7 @@ get_header();
       </div>
     </div>
     <div class="gd-svc-item reverse">
-      <div class="gd-svc-item-img reveal<?php echo gracedeco_has_media( 'videos/consulting.mp4' ); ?>"><?php gracedeco_media( 'videos/consulting.mp4', '' ); ?></div>
+      <div class="gd-svc-item-img reveal<?php echo gracedeco_has_media( 'videos/delivery.mp4' ); ?>"><?php gracedeco_media( 'videos/delivery.mp4', '' ); ?></div>
       <div>
         <div class="gd-svc-item-num reveal">02</div>
         <div class="gd-svc-item-en reveal reveal-delay-1">LAYOUT CONSULTING</div>

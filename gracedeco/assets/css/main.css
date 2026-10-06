@@ -500,20 +500,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   .gd-photo-grid .gd-photo-tall{aspect-ratio:3/4;}
 }
 
-/* ---- sub page hero media ---- */
-.gd-page-hero > video,.gd-page-hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-.gd-page-hero.has-media .gd-page-hero-overlay{background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.5));}
-
 /* ---- image frames ~20% smaller on desktop (client request) ---- */
 @media (min-width:769px){
   .gd-about-img,.gd-svc-item-img{width:80%;margin-left:auto;margin-right:auto;}
 }
-
-/* light header text while it sits on top of a dark hero video (before scrolling) */
-body:has(.gd-page-hero.has-media) .gd-header:not(.scrolled) .gd-logo-text,
-body:has(.gd-page-hero.has-media) .gd-header:not(.scrolled) .gd-nav a:not(.active):not(.gd-cta){color:#fff;}
-body:has(.gd-page-hero.has-media) .gd-header:not(.scrolled) .gd-logo-sub{color:rgba(255,255,255,.8);}
-body:has(.gd-page-hero.has-media) .gd-header:not(.scrolled) .gd-cta{color:#fff;border-color:#fff;}
-body:has(.gd-page-hero.has-media) .gd-header:not(.scrolled) .gd-cta:hover{background:#fff;color:var(--ink);}
-body:has(.gd-page-hero.has-media) .gd-header:not(.scrolled) .gd-burger span{background:#fff;}
-body:has(.gd-page-hero.has-media) .gd-burger.open span{background:#fff;}

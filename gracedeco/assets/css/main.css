@@ -500,7 +500,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   .gd-photo-grid .gd-photo-tall{aspect-ratio:3/4;}
 }
 
-/* ---- image frames ~20% smaller on desktop (client request) ---- */
+/* ---- About images (HOME About / ABOUT Greetings) ~20% smaller on desktop (client request) ---- */
 @media (min-width:769px){
-  .gd-about-img,.gd-svc-item-img{width:80%;margin-left:auto;margin-right:auto;}
+  .gd-about-img{width:80%;margin-left:auto;margin-right:auto;}
 }

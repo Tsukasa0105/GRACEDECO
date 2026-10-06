@@ -41,37 +41,21 @@ get_header();
           </div>
         </div>
       </div>
-      <form class="gd-contact-form reveal reveal-delay-1" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
-    <input type="hidden" name="action" value="gracedeco_contact">
-    <?php wp_nonce_field( 'gracedeco_contact', 'gracedeco_nonce' ); ?>
-    <p class="gd-form-hp" aria-hidden="true"><label>Leave empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></p>
-    <?php get_template_part( 'template-parts/contact-notice' ); ?>
-        <div class="gd-form-group">
-          <label class="gd-form-label" for="gd-f-company">COMPANY NAME 会社名<span class="req">*</span></label>
-          <input type="text" id="gd-f-company" name="company" class="gd-form-input" placeholder="株式会社◯◯不動産" required>
-        </div>
-        <div class="gd-form-group">
-          <label class="gd-form-label" for="gd-f-name">YOUR NAME お名前<span class="req">*</span></label>
-          <input type="text" id="gd-f-name" name="name" class="gd-form-input" placeholder="山田 太郎" required>
-        </div>
-        <div class="gd-form-group">
-          <label class="gd-form-label" for="gd-f-email">EMAIL メールアドレス<span class="req">*</span></label>
-          <input type="email" id="gd-f-email" name="email" class="gd-form-input" placeholder="example@company.co.jp" required>
-        </div>
-        <div class="gd-form-group">
-          <label class="gd-form-label" for="gd-f-tel">TEL 電話番号</label>
-          <input type="tel" id="gd-f-tel" name="tel" class="gd-form-input" placeholder="03-1234-5678">
-        </div>
-        <div class="gd-form-group">
-          <label class="gd-form-label" for="gd-f-subject">SUBJECT ご相談内容<span class="req">*</span></label>
-          <input type="text" id="gd-f-subject" name="subject" class="gd-form-input" placeholder="例：3LDKマンションのステージング相談" required>
-        </div>
-        <div class="gd-form-group">
-          <label class="gd-form-label" for="gd-f-message">MESSAGE メッセージ<span class="req">*</span></label>
-          <textarea id="gd-f-message" name="message" class="gd-form-textarea" placeholder="物件の状況やご要望をご記入ください" required></textarea>
-        </div>
-        <button type="submit" class="gd-form-btn"><span>SEND MESSAGE</span></button>
-      </form>
+      <div class="gd-contact-form gd-cf7 reveal reveal-delay-1">
+        <?php
+        $gd_cf7_id = gracedeco_cf7_id();
+        if ( $gd_cf7_id ) {
+          echo do_shortcode( '[contact-form-7 id="' . (int) $gd_cf7_id . '"]' ); // phpcs:ignore WordPress.Security.EscapeOutput
+        } else {
+          ?>
+          <p class="gd-form-unavailable">
+            現在フォームをご利用いただけません。お手数ですが、お電話（<?php echo esc_html( gracedeco_contact()['tel'] ); ?>）またはメール（<?php echo esc_html( gracedeco_contact()['mail'] ); ?>）にてご連絡ください。
+          </p>
+          <?php if ( current_user_can( 'manage_options' ) ) : ?>
+            <p class="gd-form-unavailable gd-form-admin-note">【管理者向け】プラグイン「Contact Form 7」を有効化してから、管理画面を開き直すと、フォームが自動作成されます。</p>
+          <?php endif; ?>
+        <?php } ?>
+      </div>
     </div>
   </section>
 </main>

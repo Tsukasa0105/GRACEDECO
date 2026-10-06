@@ -142,61 +142,111 @@ function gracedeco_contact() {
 }
 
 /**
- * Contact form handler (admin-post.php).
+ * Contact Form 7 integration.
+ * The form is created automatically (once) from the markup below when the plugin is active,
+ * and its ID is stored in the option "gracedeco_cf7_id". Edit the form freely in Contact Form 7 afterwards.
  */
-function gracedeco_handle_contact() {
-	$redirect = wp_get_referer() ? wp_get_referer() : gracedeco_url( 'contact' );
-	$redirect = remove_query_arg( 'gd_status', $redirect );
-
-	if ( ! isset( $_POST['gracedeco_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['gracedeco_nonce'] ) ), 'gracedeco_contact' ) ) {
-		wp_safe_redirect( add_query_arg( 'gd_status', 'error', $redirect ) . '#contact-form' );
-		exit;
-	}
-
-	// Honeypot.
-	if ( ! empty( $_POST['website'] ) ) {
-		wp_safe_redirect( add_query_arg( 'gd_status', 'sent', $redirect ) . '#contact-form' );
-		exit;
-	}
-
-	$company = isset( $_POST['company'] ) ? sanitize_text_field( wp_unslash( $_POST['company'] ) ) : '';
-	$name    = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : '';
-	$email   = isset( $_POST['email'] ) ? sanitize_email( wp_unslash( $_POST['email'] ) ) : '';
-	$tel     = isset( $_POST['tel'] ) ? sanitize_text_field( wp_unslash( $_POST['tel'] ) ) : '';
-	$subject = isset( $_POST['subject'] ) ? sanitize_text_field( wp_unslash( $_POST['subject'] ) ) : '';
-	$message = isset( $_POST['message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['message'] ) ) : '';
-
-	if ( '' === $company || '' === $name || ! is_email( $email ) || '' === $subject || '' === $message ) {
-		wp_safe_redirect( add_query_arg( 'gd_status', 'invalid', $redirect ) . '#contact-form' );
-		exit;
-	}
-
-	$to = apply_filters( 'gracedeco_contact_to', get_option( 'admin_email' ) );
-
-	$body  = "会社名: {$company}\n";
-	$body .= "お名前: {$name}\n";
-	$body .= "メールアドレス: {$email}\n";
-	$body .= "電話番号: {$tel}\n";
-	$body .= "ご相談内容: {$subject}\n\n";
-	$body .= "メッセージ:\n{$message}\n";
-
-	$headers = array(
-		'Content-Type: text/plain; charset=UTF-8',
-		'Reply-To: ' . $name . ' <' . $email . '>',
-	);
-
-	$sent = wp_mail(
-		$to,
-		'[' . wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES ) . '] お問い合わせ: ' . $subject,
-		$body,
-		$headers
-	);
-
-	wp_safe_redirect( add_query_arg( 'gd_status', $sent ? 'sent' : 'error', $redirect ) . '#contact-form' );
-	exit;
+function gracedeco_cf7_form_markup() {
+	return <<<'CF7'
+<div class="gd-form-group">
+<label class="gd-form-label" for="gd-f-company">COMPANY NAME 会社名<span class="req">*</span></label>
+[text* company id:gd-f-company class:gd-form-input autocomplete:organization placeholder "株式会社◯◯不動産"]
+</div>
+<div class="gd-form-group">
+<label class="gd-form-label" for="gd-f-name">YOUR NAME お名前<span class="req">*</span></label>
+[text* your-name id:gd-f-name class:gd-form-input autocomplete:name placeholder "山田 太郎"]
+</div>
+<div class="gd-form-group">
+<label class="gd-form-label" for="gd-f-email">EMAIL メールアドレス<span class="req">*</span></label>
+[email* your-email id:gd-f-email class:gd-form-input autocomplete:email placeholder "example@company.co.jp"]
+</div>
+<div class="gd-form-group">
+<label class="gd-form-label" for="gd-f-tel">TEL 電話番号</label>
+[tel tel id:gd-f-tel class:gd-form-input autocomplete:tel placeholder "03-1234-5678"]
+</div>
+<div class="gd-form-group">
+<label class="gd-form-label" for="gd-f-subject">SUBJECT ご相談内容<span class="req">*</span></label>
+[text* your-subject id:gd-f-subject class:gd-form-input placeholder "例：3LDKマンションのステージング相談"]
+</div>
+<div class="gd-form-group">
+<label class="gd-form-label" for="gd-f-message">MESSAGE メッセージ<span class="req">*</span></label>
+[textarea* your-message id:gd-f-message class:gd-form-textarea placeholder "物件の状況やご要望をご記入ください"]
+</div>
+<button type="submit" class="gd-form-btn"><span>SEND MESSAGE</span></button>
+CF7;
 }
-add_action( 'admin_post_nopriv_gracedeco_contact', 'gracedeco_handle_contact' );
-add_action( 'admin_post_gracedeco_contact', 'gracedeco_handle_contact' );
+
+/**
+ * Create the Contact Form 7 form if it does not exist yet. Returns its ID (0 when CF7 is not active).
+ */
+function gracedeco_cf7_create_form() {
+	if ( ! class_exists( 'WPCF7_ContactForm' ) ) {
+		return 0;
+	}
+
+	$id = (int) get_option( 'gracedeco_cf7_id' );
+	if ( $id && 'wpcf7_contact_form' === get_post_type( $id ) && 'trash' !== get_post_status( $id ) ) {
+		return $id;
+	}
+
+	$form  = WPCF7_ContactForm::get_template( array( 'title' => 'GRACE DECO お問い合わせ' ) );
+	$props = $form->get_properties();
+
+	$props['form'] = gracedeco_cf7_form_markup();
+
+	$to = apply_filters( 'gracedeco_contact_to', '[_site_admin_email]' );
+
+	$props['mail'] = array_merge(
+		$props['mail'],
+		array(
+			'subject'            => '[_site_title] お問い合わせ: [your-subject]',
+			'sender'             => '[_site_title] <wordpress@' . wp_parse_url( home_url(), PHP_URL_HOST ) . '>',
+			'recipient'          => $to,
+			'additional_headers' => 'Reply-To: [your-email]',
+			'use_html'           => false,
+			'exclude_blank'      => false,
+			'body'               => "会社名: [company]\nお名前: [your-name]\nメールアドレス: [your-email]\n電話番号: [tel]\nご相談内容: [your-subject]\n\nメッセージ:\n[your-message]\n\n-- \nこのメールは [_site_title] ([_site_url]) のお問い合わせフォームから送信されました。",
+		)
+	);
+
+	$props['mail_2']['active'] = false;
+
+	$props['messages']['mail_sent_ok'] = 'お問い合わせ内容を受け付けました。ありがとうございます。';
+
+	$form->set_properties( $props );
+	$form->save();
+
+	$id = (int) $form->id();
+	if ( $id ) {
+		update_option( 'gracedeco_cf7_id', $id );
+	}
+	return $id;
+}
+add_action(
+	'admin_init',
+	function () {
+		if ( current_user_can( 'manage_options' ) ) {
+			gracedeco_cf7_create_form();
+		}
+	}
+);
+
+/**
+ * ID of the Contact Form 7 form to show on the contact page (0 when unavailable).
+ * Override with the "gracedeco_cf7_form_id" filter if a different form should be used.
+ */
+function gracedeco_cf7_id() {
+	if ( ! class_exists( 'WPCF7_ContactForm' ) ) {
+		return 0;
+	}
+	$id = (int) apply_filters( 'gracedeco_cf7_form_id', (int) get_option( 'gracedeco_cf7_id' ) );
+	return ( $id && 'wpcf7_contact_form' === get_post_type( $id ) ) ? $id : 0;
+}
+
+/**
+ * Do not let Contact Form 7 wrap the markup in <p>/<br>.
+ */
+add_filter( 'wpcf7_autop_or_not', '__return_false' );
 
 /**
  * One-time setup: create the fixed pages the theme templates are bound to (by slug),

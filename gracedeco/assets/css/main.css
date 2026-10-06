@@ -504,3 +504,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 @media (min-width:769px){
   .gd-about-img{width:80%;margin-left:auto;margin-right:auto;}
 }
+
+/* ---- Contact Form 7 ---- */
+.gd-cf7 .wpcf7-form-control-wrap{display:block;}
+.gd-cf7 .wpcf7-form-control-wrap .gd-form-input,.gd-cf7 .wpcf7-form-control-wrap .gd-form-textarea{display:block;}
+.gd-cf7 .wpcf7-not-valid{border-color:#c0392b;}
+.gd-cf7 .wpcf7-not-valid-tip{font-family:var(--sans);font-size:12px;letter-spacing:.05em;color:#a5281b;margin-top:6px;display:block;}
+.gd-cf7 .wpcf7-response-output{margin:24px 0 0;padding:16px 20px;border:1px solid var(--line);font-family:var(--sans);font-size:13px;letter-spacing:.06em;line-height:1.9;}
+.gd-cf7 form.sent .wpcf7-response-output{border-color:var(--gold);background:#fbf7ee;color:var(--gold-dark);}
+.gd-cf7 form.invalid .wpcf7-response-output,.gd-cf7 form.failed .wpcf7-response-output,.gd-cf7 form.aborted .wpcf7-response-output,.gd-cf7 form.spam .wpcf7-response-output,.gd-cf7 form.unaccepted .wpcf7-response-output{border-color:#c0392b;background:#fdf1ef;color:#a5281b;}
+.gd-cf7 .wpcf7-spinner{display:block;margin:12px auto 0;}
+.gd-cf7 .gd-form-btn{display:block;}
+.gd-cf7 .gd-form-btn:disabled{opacity:.6;cursor:not-allowed;}
+.gd-form-unavailable{font-size:14px;line-height:2;color:var(--gray-2);letter-spacing:.05em;}
+.gd-form-admin-note{margin-top:16px;color:#a5281b;}

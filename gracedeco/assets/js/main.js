@@ -190,17 +190,4 @@
       videos.forEach(function (v) { vo.observe(v); });
     }
   }
-
-  /* ===== Contact form: prevent double submit ===== */
-  var form = $('.gd-contact-form');
-  if (form) {
-    form.addEventListener('submit', function () {
-      var btn = $('.gd-form-btn', form);
-      if (btn) { setTimeout(function () { btn.disabled = true; }, 0); }
-    });
-    window.addEventListener('pageshow', function () {
-      var btn = $('.gd-form-btn', form);
-      if (btn) { btn.disabled = false; }
-    });
-  }
 })();

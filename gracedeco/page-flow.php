@@ -32,7 +32,7 @@ get_header();
             <h2 class="gd-svc-item-title">お問い合わせ</h2>
             <p class="gd-svc-item-desc">お電話・メール・お問い合わせフォームより、お気軽にご相談ください。ご相談・お見積りは無料です。物件情報や現状の課題をお聞かせください。</p>
           </div>
-          <div class="gd-svc-item-img"></div>
+          <div class="gd-svc-item-img<?php echo gracedeco_has_media( 'images/flow/flow-01.jpg' ); ?>"><?php gracedeco_media( 'images/flow/flow-01.jpg', 'お問い合わせ・ご相談' ); ?></div>
         </div>
         <div class="gd-svc-item reverse reveal" style="margin-bottom:60px;">
           <div>
@@ -41,7 +41,7 @@ get_header();
             <h2 class="gd-svc-item-title">現地調査・ヒアリング</h2>
             <p class="gd-svc-item-desc">物件を訪問し、特徴や周辺環境、ターゲット層を詳しくヒアリング。売却/賃貸のゴール設定を明確にし、最適な戦略をご提案いたします。</p>
           </div>
-          <div class="gd-svc-item-img"></div>
+          <div class="gd-svc-item-img<?php echo gracedeco_has_media( 'images/flow/flow-02.jpg' ); ?>"><?php gracedeco_media( 'images/flow/flow-02.jpg', '現地調査・ヒアリング' ); ?></div>
         </div>
         <div class="gd-svc-item reveal" style="margin-bottom:60px;">
           <div>
@@ -50,7 +50,7 @@ get_header();
             <h2 class="gd-svc-item-title">プランニング・ご提案</h2>
             <p class="gd-svc-item-desc">物件の魅力を最大限に引き出すステージングプランを作成。イメージパースやサンプル画像を交えて、詳細なお見積りとともにご提案いたします。</p>
           </div>
-          <div class="gd-svc-item-img"></div>
+          <div class="gd-svc-item-img<?php echo gracedeco_has_media( 'images/flow/flow-03.jpg' ); ?>"><?php gracedeco_media( 'images/flow/flow-03.jpg', 'プランニング・ご提案' ); ?></div>
         </div>
         <div class="gd-svc-item reverse reveal" style="margin-bottom:60px;">
           <div>
@@ -59,7 +59,7 @@ get_header();
             <h2 class="gd-svc-item-title">ステージング実施</h2>
             <p class="gd-svc-item-desc">プロのスタッフが家具・小物・グリーンを搬入し設置。モデルルームのような魅力的な空間を短期間で演出します。</p>
           </div>
-          <div class="gd-svc-item-img"></div>
+          <div class="gd-svc-item-img<?php echo gracedeco_has_media( 'images/flow/flow-04.jpg' ); ?>"><?php gracedeco_media( 'images/flow/flow-04.jpg', 'ステージング実施' ); ?></div>
         </div>
         <div class="gd-svc-item reveal" style="margin-bottom:60px;">
           <div>
@@ -68,7 +68,7 @@ get_header();
             <h2 class="gd-svc-item-title">撮影・内覧サポート</h2>
             <p class="gd-svc-item-desc">プロカメラマンによる高品質な撮影で、WEB掲載時の反響率をアップ。内覧時のアドバイスもご提供いたします。</p>
           </div>
-          <div class="gd-svc-item-img"></div>
+          <div class="gd-svc-item-img<?php echo gracedeco_has_media( 'images/flow/flow-05.jpg' ); ?>"><?php gracedeco_media( 'images/flow/flow-05.jpg', '撮影・内覧サポート' ); ?></div>
         </div>
         <div class="gd-svc-item reverse reveal">
           <div>
@@ -77,7 +77,7 @@ get_header();
             <h2 class="gd-svc-item-title">撤去・原状回復</h2>
             <p class="gd-svc-item-desc">成約後は速やかに家具・小物を撤去し、原状回復まで責任をもって対応いたします。次のオーナー様にスムーズにお引き渡しできる状態に。</p>
           </div>
-          <div class="gd-svc-item-img"></div>
+          <div class="gd-svc-item-img<?php echo gracedeco_has_media( 'images/flow/flow-06.jpg' ); ?>"><?php gracedeco_media( 'images/flow/flow-06.jpg', '撤去・原状回復' ); ?></div>
         </div>
       </div>
     </div>

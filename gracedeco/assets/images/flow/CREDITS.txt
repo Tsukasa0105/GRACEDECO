@@ -1,7 +1,53 @@
-Free images from Unsplash (Unsplash License: free for commercial use, no attribution required)
-flow-01.jpg  https://images.unsplash.com/photo-1587614203976-365c74645e83
-flow-02.jpg  https://images.unsplash.com/photo-1573497491208-6b1acb260507
-flow-03.jpg  https://images.unsplash.com/photo-1608303588026-884930af2559
-flow-04.jpg  https://images.unsplash.com/photo-1560185009-dddeb820c7b7
-flow-05.jpg  https://images.unsplash.com/photo-1629236714859-3a1ec2d8f6c3
-flow-06.jpg  https://images.unsplash.com/photo-1714647211902-bb711d643a17
+出典: 写真AC (https://www.photo-ac.com/)
+取得日: 2026-10-07
+加工: 4:3 に中央トリミングし 1200x900px の JPEG に変換（元は M サイズ 1920x1280px）
+
+作品ページ URL は https://www.photo-ac.com/main/detail/<作品番号> で開けます。
+
+flow-01.jpg
+  作品番号: 35289756
+  作品ページ: https://www.photo-ac.com/main/detail/35289756
+  タイトル: デスクワークをする笑顔の女性
+  作者: とりすたー
+  元ファイル名: 35289756_m.jpg
+
+flow-02.jpg
+  作品番号: 34896905
+  作品ページ: https://www.photo-ac.com/main/detail/34896905
+  タイトル: 打ち合わせをする女性二人
+  作者: YUTO@PHOTOGRAPHER
+  元ファイル名: 34896905_m.jpg
+
+flow-03.jpg
+  作品番号: 35048213
+  作品ページ: https://www.photo-ac.com/main/detail/35048213
+  タイトル: タブレットを使い提案する作業着姿の女性
+  作者: FineGraphics
+  元ファイル名: 35048213_m.jpg
+
+flow-04.jpg
+  作品番号: 35183451
+  作品ページ: https://www.photo-ac.com/main/detail/35183451
+  タイトル: ソファで読書をする女性
+  作者: Stupo
+  元ファイル名: 35183451_m.jpg
+
+flow-05.jpg
+  作品番号: 34563528
+  作品ページ: https://www.photo-ac.com/main/detail/34563528
+  タイトル: クリエイターの若い女性
+  作者: grimlock
+  元ファイル名: 34563528_m.jpg
+
+flow-06.jpg
+  作品番号: 34691467
+  作品ページ: https://www.photo-ac.com/main/detail/34691467
+  タイトル: 引越しの準備をする若い女性
+  作者: grimlock
+  元ファイル名: 34691467_m.jpg
+
+利用条件メモ（写真AC 検索結果ページの記載より。利用規約の全文は未確認）
+- 商用利用: 可
+- クレジット表記: 不要（「クレジット表記や許可も必要ありません」と記載）
+- 禁止事項などの詳細は https://www.photo-ac.com/main/terms で別途確認すること
+- ダウンロードはプレミアム会員アカウントで実施（作品はすべて通常ライセンスの範囲で使用）
